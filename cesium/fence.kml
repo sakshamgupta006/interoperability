@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Document xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>s</name>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>501400FF</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <LineString>
+      <extrude>false</extrude>
+      <tessellate>true</tessellate>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1152043,28.7548115,250
+77.1152043,28.7548115,250
+77.119689,28.7551878,250
+77.1201611,28.7485283,250
+77.1150541,28.7483589,250
+77.1152043,28.7548115,250
+77.1152043,28.7548115,250
+</coordinates>
+    </LineString>
+  </Placemark>
+</Document>

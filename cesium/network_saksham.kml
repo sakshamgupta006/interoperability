@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Document xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>WP H Alt: 174</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1152401006268,28.7540504369352,174
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 1 Alt: 179</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1158845986691,28.7540238862687,179
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 2 Alt: 177</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1164834382621,28.7542401503238,177
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 3 Alt: 175</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1170822807183,28.7544564118622,175
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 4 Alt: 178</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1173275499106,28.7542329474608,178
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 5 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1177267791234,28.7544298520747,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 6 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1181716610582,28.7542257393293,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 7 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.118616541311,28.7540216250911,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 8 Alt: 179</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1190614198818,28.7538175093601,179
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 9 Alt: 177</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1191070677409,28.7534164924803,177
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 10 Alt: 175</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1187078399836,28.7532195915274,175
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 11 Alt: 173</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1187534888427,28.7528185742796,173
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 12 Alt: 167</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1189987497853,28.7524369070657,167
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 13 Alt: 169</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1188447856068,28.7520165388524,169
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 14 Alt: 171</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1186908227464,28.7515961706707,171
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 15 Alt: 172</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1185368612042,28.7511758025206,172
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 16 Alt: 170</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1181376425819,28.7509788990357,170
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 17 Alt: 167</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1178923828658,28.7512023634675,167
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 18 Alt: 163</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1176471218317,28.7514258276978,163
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 19 Alt: 169</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1174018594794,28.7518074936997,169
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 20 Alt: 175</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1171565958091,28.7521891585069,175
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 21 Alt: 182</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1169113308208,28.7525708221194,182
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 22 Alt: 182</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1164664536347,28.7527749308029,182
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 23 Alt: 178</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1162211856692,28.7529983927497,178
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 24 Alt: 177</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1158219641826,28.7528014831823,177
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 25 Alt: 178</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1156680132975,28.7523811119015,178
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 26 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1155140637304,28.7519607406524,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 27 Alt: 182</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1153601154814,28.7515403694351,182
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 28 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.115405775226,28.7511393530665,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 29 Alt: 182</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1152238338731,28.7506815183208,182
+</coordinates>
+    </Point>
+  </Placemark>
+    <Placemark>
+    <name>WP 30 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.115391,28.749343,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 33 Alt: 176</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116232881228,28.7495087359454,176
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 34 Alt: 178</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1166320908525,28.7497056453315,178
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 35 Alt: 180</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1170313017493,28.7499025534213,180
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 36 Alt: 182</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1174305139185,28.7500994602146,182
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 37 Alt: 187</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1180749844857,28.7500729024597,187
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 38 Alt: 187</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1185198468094,28.7498687884242,187
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 39 Alt: 187</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1189647074512,28.7496646728963,187
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP H Alt: 174</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1152401006268,28.7540504369352,174
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WPs</name>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <LineString>
+      <extrude>false</extrude>
+      <tessellate>true</tessellate>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.1152401006268,28.7540504369352,174
+77.1158845986691,28.7540238862687,179
+77.1164834382621,28.7542401503238,177
+77.1170822807183,28.7544564118622,175
+77.1173275499106,28.7542329474608,178
+77.1177267791234,28.7544298520747,180
+77.1181716610582,28.7542257393293,180
+77.118616541311,28.7540216250911,180
+77.1190614198818,28.7538175093601,179
+77.1191070677409,28.7534164924803,177
+77.1187078399836,28.7532195915274,175
+77.1187534888427,28.7528185742796,173
+77.1189987497853,28.7524369070657,167
+77.1188447856068,28.7520165388524,169
+77.1186908227464,28.7515961706707,171
+77.1185368612042,28.7511758025206,172
+77.1181376425819,28.7509788990357,170
+77.1178923828658,28.7512023634675,167
+77.1176471218317,28.7514258276978,163
+77.1174018594794,28.7518074936997,169
+77.1171565958091,28.7521891585069,175
+77.1169113308208,28.7525708221194,182
+77.1164664536347,28.7527749308029,182
+77.1162211856692,28.7529983927497,178
+77.1158219641826,28.7528014831823,177
+77.1156680132975,28.7523811119015,178
+77.1155140637304,28.7519607406524,180
+77.1153601154814,28.7515403694351,182
+77.115405775226,28.7511393530665,180
+77.1152238338731,28.7506815183208,182
+77.115391,28.749343,180
+77.116232881228,28.7495087359454,176
+77.1166320908525,28.7497056453315,178
+77.1170313017493,28.7499025534213,180
+77.1174305139185,28.7500994602146,182
+77.1180749844857,28.7500729024597,187
+77.1185198468094,28.7498687884242,187
+77.1189647074512,28.7496646728963,187
+77.1152401006268,28.7540504369352,174
+</coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>onground</name>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>7f00ffff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    
+  </Placemark>
+</Document>

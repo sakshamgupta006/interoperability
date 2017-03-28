@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>Plotting the obstacles:stationary and dynamic</title>
+    <script src="../Build/Cesium/Cesium.js"></script> 
+	<style>
+		@import url(http://localhost:8000/Desktop/Cesium-1.14/Build/Cesium/Widgets/widgets.css);
+		@import url(http://localhost:8000/Desktop/Cesium-1.14/Apps/Sandcastle/templates/bucket.css);
+		html, body, #cesiumContainer 
+			{
+				width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+			}
+    </style>
+</head>
+
+<BODY>
+	<div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <div id="toolbar"></div>
+
+	<script>
+		var request= new XMLHttpRequest();
+		
+		var url="http://localhost:8000/Desktop/uasjson.json";
+		var viewer = new Cesium.Viewer('cesiumContainer');
+		var obj;
+		var planeurl="http://localhost:8000/Desktop/planejson.json";
+		var planeobj;
+		var planerequest=new XMLHttpRequest();
+		var vectorlati = 0;
+		var vectorlongi = 1;
+		var vectorheighti = 0;
+		request.onreadystatechange=function () 
+			{
+			if (request.readyState == 4 && request.status == 200) 
+				{					
+					obj = JSON.parse(request.responseText);
+					formcylinder();
+					formsphere();
+					kmlfilereading();
+				}	
+			}
+		
+		planerequest.onreadystatechange=function () 
+			{
+			console.log("Inside the plane function",planeiteration);
+			if (request.readyState == 4 && request.status == 200)
+				{
+					console.log("Reequest received",planeiteration);
+					planeobj=JSON.parse(planerequest.responseText);
+					
+					createModel(Number(planeobj.longitude),Number(planeobj.latitude),Number(planeobj.height)); 
+				}
+				console.log(request.status);
+				console.log(request.readyState);
+			}
+	 	
+		function formcylinder() {
+		var t=obj.stationary_osbtacles.length;
+		for(var i=0;i<t;i++)
+		{
+		var greenCylinder = viewer.entities.add({
+		name : 'Green cylinder with black outline',
+		position: Cesium.Cartesian3.fromDegrees(Number(obj.stationary_osbtacles[i].longitude), Number(obj.stationary_osbtacles[i].latitude),Number(obj.stationary_osbtacles[i].cylinder_height)/2),
+		cylinder:{
+        length : Number(obj.stationary_osbtacles[i].cylinder_height),
+        topRadius : Number( obj.stationary_osbtacles[i].cylinder_radius),
+        bottomRadius : Number( obj.stationary_osbtacles[i].cylinder_radius),
+        material : Cesium.Color.WHITE.withAlpha(1),
+        outline : true,
+        outlineColor : Cesium.Color.DARK_GREEN
+		
+		
+    }
+});
+	}
+	}
+	
+	 function formsphere()
+	 {
+	for(var j=0;j<obj.moving_obstacles.length;j++)
+	{var redSphere = viewer.entities.add({
+    name : 'Red sphere with black outline',
+    position: Cesium.Cartesian3.fromDegrees(Number(obj.moving_obstacles[j].longitude),Number( obj.moving_obstacles[j].latitude), Number(obj.moving_obstacles[j].altitude_msl)),
+    ellipsoid : {
+        radii : new Cesium.Cartesian3(Number(obj.moving_obstacles[j].sphere_radius),Number(obj.moving_obstacles[j].sphere_radius),Number(obj.moving_obstacles[j].sphere_radius)),
+        material : Cesium.Color.RED.withAlpha(0.5),
+        outline : true,
+        outlineColor : Cesium.Color.BLACK
+    }
+});
+ } }
+	
+	 function directionbc(longitude,latitude,height,longs,lats,heights)
+ {  var vectorlat = latitude - lats;
+    var vectorlong = longitude - longs;
+    var vectorheight = height - heights;
+	var dotp = (vectorlat*vectorlati) + (vectorlong*vectorlongi);
+    var deno2 = Math.pow(vectorlat,2)+ Math.pow(vectorlong,2);
+	var deno = Math.sqrt(deno2);
+	var cosecant = dotp/deno;
+	if(vectorlat>0)
+	var cosinverse = Math.acos(cosecant);
+	else
+	var cosinverse=6.28-Math.acos(cosecant);
+	
+ }
+	
+	var position2=Cesium.Cartesian3.fromDegrees(0, 0, 0);
+	var planeiteration=1;
+	position2.x=0;
+	position2.y=0;
+	position2.z=0;
+	
+	function createModel(longitude, latitude, height) {
+    var position = Cesium.Cartesian3.fromDegrees(longitude, latitude, height);
+    var heading = directionbc(Number(position.x),Number(position.y),Number(position.z),Number(position2.x),Number(position2.y), Number(position2.z));
+    var pitch = 0;
+    var roll = 0;
+    var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, heading, pitch, roll);
+    var entity = viewer.entities.add({
+        name : 'http://localhost:8000/Desktop/Cesium-1.14/Apps/SampleData/models/CesiumAir/modelfile.bgltf',
+        position : position,
+        orientation : orientation,
+        model : {
+            uri : 'http://localhost:8000/Desktop/Cesium-1.14/Apps/SampleData/models/CesiumAir/modelfile.bgltf',
+            minimumPixelSize : 12
+        }
+    });
+	position2 = position;
+    if(planeiteration==1){viewer.trackedEntity = entity;}
+	planeiteration+=1;
+	
+
+}
+
+     	
+	 		
+		
+		function kmlfilereading()
+		{
+			var kmlDataSource = new Cesium.KmlDataSource();
+			kmlDataSource.load("http://localhost:8000/Desktop/kmlfile.kml");
+			viewer.dataSources.add(kmlDataSource)
+		}
+				
+		function process()
+		{
+			
+			//request.open("GET", url, true);
+			//request.send();
+			//consoleconsole.log(planeiteration,"Printing in the process function");
+			console.log(planeiteration);
+	planerequest.open("GET",planeurl,true);
+		planerequest.send();
+			
+		}
+		
+		setInterval(process,20000);
+		
+		
+	//	planerequest.open("GET",planeurl,true);
+	  //  planerequest.send();
+		
+		
+		
+	</script>
+
+
+
+
+</BODY>
+</html>

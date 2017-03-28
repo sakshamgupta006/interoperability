@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Document xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>WP Home Alt: 200</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116394,28.753193,200
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 2 Alt: 250</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.115837,28.754463,250
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 3 Alt: 270</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.113997,28.753998,270
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 4 Alt: 270</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.113681,28.75262,270
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 5 Alt: 250</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.114791,28.751661,250
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 6 Alt: 240</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116224,28.751491,240
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 7 Alt: 225</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.11624,28.752507,225
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 8 Alt: 205</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116111,28.753123,205
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP 9 Alt: 200</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.115993,28.753626,200
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WP Home Alt: 200</name>
+    <Point>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116394,28.753193,200
+</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>WPs</name>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <LineString>
+      <extrude>false</extrude>
+      <tessellate>true</tessellate>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <coordinates>77.116394,28.753193,200
+77.115837,28.754463,250
+77.113997,28.753998,270
+77.113681,28.75262,270
+77.114791,28.751661,250
+77.116224,28.751491,240
+77.11624,28.752507,225
+77.116111,28.753123,205
+77.115993,28.753626,200
+77.116394,28.753193,200
+</coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>onground</name>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>7f00ffff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <LineString>
+      <extrude>false</extrude>
+      <tessellate>true</tessellate>
+      <altitudeMode>clampToGround</altitudeMode>
+      <coordinates>77.116394,28.753193,200
+77.115837,28.754463,250
+77.113997,28.753998,270
+77.113681,28.75262,270
+77.114791,28.751661,250
+77.116224,28.751491,240
+77.11624,28.752507,225
+77.116111,28.753123,205
+77.115993,28.753626,200
+77.116394,28.753193,200
+</coordinates>
+    </LineString>
+  </Placemark>
+</Document>

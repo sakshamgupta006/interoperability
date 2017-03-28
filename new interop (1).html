@@ -1,0 +1,307 @@
+<html>
+<head></head>
+<body>
+   <title>Sample</title>
+   <script src="http://www.google.com/jsapi?key="My App key here"> </script>
+   <script type="text/javascript">
+
+var ge;
+      google.load("earth", "1");
+
+      function init() {
+         google.earth.createInstance('map3d', initCB, failureCB);
+      }
+
+      function initCB(instance) {
+         ge = instance;
+         ge.getWindow().setVisibility(true);
+
+
+ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+
+setInterval(function (){kml_update()},3000);
+//js_parsestobs();
+setInterval(function (){js_parsestobs()},1000);
+setInterval(function (){js_parseplane()},1000);
+	 ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+  ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+      }
+
+
+
+      function failureCB(errorCode) {
+      }
+
+
+ 
+
+
+
+
+
+  function makeCircle(centerLat, centerLng, radius,altitude) 
+{
+	var lineStringPlacemark = ge.createPlacemark('');
+	var lineString = ge.createLineString('');
+	lineStringPlacemark.setGeometry(lineString);
+	lineString.setExtrude(true);
+	lineString.setAltitudeMode(ge.ALTITUDE_RELATIVE_TO_GROUND);
+
+
+
+	 var steps = 25;
+    	var pi2 = Math.PI * 2;
+    	for (var i = 0; i < steps; i++) 
+    {
+      		var lat = centerLat + radius * Math.cos(i / steps * pi2);
+      		var lng = centerLng + radius * Math.sin(i / steps * pi2);
+      		
+		lineString.getCoordinates().pushLatLngAlt(lat,lng,altitude);
+    }
+
+		
+		lineString.getCoordinates().pushLatLngAlt((centerLat+radius), centerLng,altitude);
+
+
+	//var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+	//lookAt.setRange(300);
+	//lookAt.setTilt(80);
+	//ge.getView().setAbstractView(lookAt);
+
+	ge.getFeatures().appendChild(lineStringPlacemark);
+   
+  
+}
+
+
+function createCirclePolygon(centerLat, centerLng, radius,altitude) {
+
+  function MakeCircle(centerLat, centerLng, radius,altitude) {
+
+    var ring = ge.createLinearRing('');
+    var steps = 25;
+    var pi2 = Math.PI * 2;
+    for (var i = 0; i < steps; i++) {
+      var lat = centerLat + radius * Math.cos(i / steps * pi2);
+      var lng = centerLng + radius * Math.sin(i / steps * pi2);
+      ring.getCoordinates().pushLatLngAlt(lat,lng,altitude);
+    }
+    return ring;
+  }
+
+  var polygonPlacemark = ge.createPlacemark('');
+  polygonPlacemark.setGeometry(ge.createPolygon(''));
+  var outer = ge.createLinearRing('');
+  polygonPlacemark.getGeometry().setOuterBoundary(MakeCircle(centerLat, centerLng, radius,altitude));
+  polygonPlacemark.setName('placemark');
+  //ge.getFeatures().appendChild(polygonPlacemark);
+}
+
+function kml_update(){ 
+var t;
+
+var st="http://localhost:8000/Downloads/Compressed/interopcodefinal/network%20%281%29.kml";
+
+var link = ge.createLink('');
+link.setHref(st);
+
+         var networkLink = ge.createNetworkLink('');
+         networkLink.set(link, true, false); // Sets the link, refreshVisibility, and flyToView.
+
+         ge.getFeatures().appendChild(networkLink);
+  //to change
+
+//remove_kml(networkLink);
+setInterval(function (){remove_kml(networkLink)},2900);
+
+
+
+
+}
+
+function remove_kml(a){
+
+ge.getFeatures().removeChild(a);
+
+
+}
+
+function js_parsestobs(){
+
+var xmlhttp = new XMLHttpRequest();
+var url = "http://localhost:8000/Downloads/Compressed/interopcodefinal/File2.json";
+    xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+       var text = xmlhttp.responseText;
+ var obj= JSON.parse(text);
+var y;
+var i;
+y=obj.st_count;
+y=Number(y);
+var z;
+z=obj.mv_count;
+alert(y);
+alert(z);
+var k;
+var l;
+
+(k=obj.moving_obstacles[0].latitude) + " " + (l=obj.moving_obstacles[0].longitude);
+k=Number(k);
+l=Number(l);
+//alert(k);
+//alert(l);
+create_mov_obs(k,l);
+
+
+                                                    //Will be updated after long duration
+
+var a=[];
+var b=[];
+var c=[];
+var d=[];
+
+for(i=0;i<3;i++){
+(a[i]=obj.stationary_obstacles[i].latitude) + " " + (b[i]=obj.stationary_obstacles[i].longitude)+ " " + (c[i]=obj.stationary_obstacles[i].cylinder_radius) + " " +(d[i]=obj.stationary_obstacles[i].cylinder_height);
+a[i]=Number(a[i]);
+b[i]=Number(b[i]);
+c[i]=Number(c[i]);
+d[i]=Number(d[i]);
+c[i]=c[i]/111120 ;
+//alert(a[i]);
+//alert(b[i]);
+//alert(c[i]);
+//alert(d[i]);
+
+
+
+makeCircle(a[i], b[i], c[i],d[i]);
+	createCirclePolygon(a[i],b[i],c[i],d[i]);
+
+}
+
+
+
+
+}
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+}
+
+function create_mov_obs(f,g)
+{
+	// Placemark
+	
+	var placemark = ge.createPlacemark('');
+	placemark.setName('model');
+
+	// Placemark/Model (geometry)
+	var model = ge.createModel('');
+	placemark.setGeometry(model);
+
+		// Placemark/Model/Link
+	var link = ge.createLink('');
+	link.setHref('http://localhost:8000/Downloads/Compressed/interopcodefinal/vgsphere.dae');
+	model.setLink(link);
+
+	 //get center look at location
+	var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+
+	// Placemark/Model/Location
+	var loc = ge.createLocation('');
+	loc.setLatitude(f);
+	loc.setLongitude(g);
+	model.setLocation(loc);
+
+	// add the model placemark to Earth
+	ge.getFeatures().appendChild(placemark);
+	
+	// zoom into the model
+	//lookAt.setRange(300);
+	//lookAt.setTilt(80);
+	//ge.getView().setAbstractView(lookAt);
+
+setInterval(function (){remove_kml(placemark)},900);
+}
+
+
+function create_plane(kk,gg)
+{
+	// Placemark
+	
+	var placemark = ge.createPlacemark('');
+	placemark.setName('model');
+
+	// Placemark/Model (geometry)
+	var model = ge.createModel('');
+	placemark.setGeometry(model);
+
+		// Placemark/Model/Link
+	var link = ge.createLink('');
+	link.setHref('http://localhost:8000/Downloads/Compressed/interopcodefinal/bigplane.dae');
+	model.setLink(link);
+
+	 //get center look at location
+	var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+
+	// Placemark/Model/Location
+	var loc = ge.createLocation('');
+	loc.setLatitude(kk);
+	loc.setLongitude(gg);
+	model.setLocation(loc);
+
+	// add the model placemark to Earth
+	ge.getFeatures().appendChild(placemark);
+	
+	// zoom into the model
+	//lookAt.setRange(300);
+	//lookAt.setTilt(80);
+	//ge.getView().setAbstractView(lookAt);
+
+setInterval(function (){remove_kml(placemark)},900);
+}
+
+
+function js_parseplane()
+{
+var xmlhttp = new XMLHttpRequest();
+var url = "http://localhost:8000/Downloads/Compressed/interopcodefinal/File3.json";
+    xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+       var texts = xmlhttp.responseText;
+ var objt= JSON.parse(texts);
+
+var planelat;
+var planelon;
+var planealt;
+(planelat = objt.plane.lat) + " " + (planelon = objt.plane.lon) + " " + (planealt = objt.plane.alt_msl);
+planelat = Number(planelat);
+planelon = Number(planelon);
+planealt = Number(planealt);
+//alert(planelat);
+//alert(planelon);
+create_plane(planelat,planelon);
+//setInterval(function (){remove_kml(placemark)},900);
+}
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
+
+
+
+
+google.setOnLoadCallback(init);
+     
+
+   </script>
+
+
+
+   <div id="map3d" style="height: 980px; width: 1920px;">
+</div>
+	
+</body>
+</html> 

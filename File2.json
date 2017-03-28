@@ -1,0 +1,1 @@
+{"stationary_osbtacles":[{"latitude": 28.748602,"longitude": 77.117256,"cylinder_radius": 750,"cylinder_height": 11100},{"latitude": 28.588,"longitude": 77.262,"cylinder_radius": 200,"cylinder_height": 300}],"moving_obstacles": [{"latitude":28.797,"longitude":77.166,"altitude_msl": 100,"sphere_radius": 200}]}
