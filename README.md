@@ -1,4 +1,4 @@
-#Interoperablity
+# Interoperablity
 The project aims to interactive display active UAV information to the Ground Control System and provide this information to a central server. Developed for AUVSI SUAS Competiton
 
 # Screenshots
